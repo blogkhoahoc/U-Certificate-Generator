@@ -12,18 +12,18 @@ let container = document.querySelector(".container");
 let certificate_no = "UC-3308c41b-93cb-485a-9ee3-450729f8ef73";
 
 // Random Number Generation for Certificate Number & Reference Number
-let a = 400000; //Min value
-let b = 485000; //Max Value
+a = 400000; //Min value
+b = 485000; //Max Value
 let rand = a + (b - 1) * Math.random(); //Main Formula
 let rand2 = Math.round(rand);
 
-let c = 30; //Min value
-let d = 90; //Max Value
+c = 30; //Min value
+d = 90; //Max Value
 let rand3 = c + (d - 1) * Math.random(); //Main Formula
 let rand4 = Math.round(rand3);
 
-let e = 1; //Min value
-let f = 9; //Max Value
+e = 1; //Min value
+f = 9; //Max Value
 let rand5 = e + (f - 1) * Math.random(); //Main Formula
 let rand6 = Math.round(rand5);
 
@@ -63,7 +63,7 @@ generate.addEventListener("click", (e) => {
     container.style.height = "auto";
 
     let certificate = document.getElementById("certificate");
-    certificate.style.backgroundColor = "#ffffff"; // Đổi màu nền thành trắng chuẩn để không bị lỗi nền trong suốt
+    certificate.style.backgroundColor = "#f8f9fb";
     certificate.style.display = "flex";
     certificate.innerHTML = `<div class="logo">
     <img id="udemy-logo" src="img/udemy-logo.png" alt="">
@@ -89,25 +89,16 @@ generate.addEventListener("click", (e) => {
 });
 
 //Download PDF
+
 let download = document.getElementById("download");
 download.addEventListener("click", () => {
-  let certificate = document.getElementById("certificate"); // Gọi lại element để đảm bảo html2pdf nhận diện đúng khung
-
   var opt = {
-    margin: 0,
+    margin: 1,
     filename: `Udemy-certificate.pdf`,
     image: { type: "jpeg", quality: 0.98 },
-    html2canvas: { 
-        scale: 2, 
-        useCORS: true, // Cho phép tải ảnh/font từ link ngoài
-        logging: false, 
-        scrollY: 0 
-    },
-    jsPDF: { unit: "mm", format: "a4", orientation: "landscape" }, // Format chuẩn A4 ngang
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "px", format: "c2", orientation: "landscape" },
   };
 
-  // Đợi cho toàn bộ font chữ trên web load xong thì mới thực hiện chụp PDF
-  document.fonts.ready.then(function () {
-    html2pdf().set(opt).from(certificate).save();
-  });
+  html2pdf().set(opt).from(certificate).save();
 });

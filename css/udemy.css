@@ -21,8 +21,8 @@
   padding-top: 20px;
   padding-bottom: 40px;
   height: fit-content;
-  width: 1280px;
-  /* background-color: rgba(200, 194, 194, 0.073); */
+  width: 1122px; /* Chỉnh về 1122px để khớp chuẩn A4 Landscape hơn là 1280px */
+  background-color: #ffffff; /* BẮT BUỘC có màu nền để không bị lỗi trong suốt */
 }
 
 .container {
@@ -37,7 +37,8 @@
 .logo {
   display: flex;
   align-items: center;
-  width: auto;
+  justify-content: space-between; /* Tự động đẩy logo và text ra 2 mép trái/phải */
+  width: 100%; /* Bắt buộc để flexbox hoạt động chính xác */
 }
 
 .right-side {
@@ -45,7 +46,7 @@
   font-family: "DistrictProW01-Medium", sans-serif;
   color: rgba(107, 107, 107, 0.879);
   text-align: right;
-  padding-left: 620px;
+  /* padding-left: 620px;  <-- XÓA DÒNG NÀY ĐI */
 }
 .right-side > div {
   margin-top: 10px;
