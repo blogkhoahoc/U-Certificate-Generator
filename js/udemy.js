@@ -63,7 +63,7 @@ generate.addEventListener("click", (e) => {
     container.style.height = "auto";
 
     let certificate = document.getElementById("certificate");
-    certificate.style.backgroundColor = "#ffffff"; // Đổi màu nền thành trắng chuẩn để không bị lỗi nền trong suốt
+    certificate.style.backgroundColor = "#f8f9fb";
     certificate.style.display = "flex";
     certificate.innerHTML = `<div class="logo">
     <img id="udemy-logo" src="img/udemy-logo.png" alt="">

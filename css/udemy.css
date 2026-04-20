@@ -22,7 +22,7 @@
   padding-bottom: 40px;
   height: fit-content;
   width: 1122px; /* Chỉnh về 1122px để khớp chuẩn A4 Landscape hơn là 1280px */
-  background-color: #ffffff; /* BẮT BUỘC có màu nền để không bị lỗi trong suốt */
+  background-color: #f8f9fb; /* BẮT BUỘC có màu nền để không bị lỗi trong suốt */
 }
 
 .container {
